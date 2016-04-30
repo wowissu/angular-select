@@ -78,11 +78,11 @@
 
         ngSelect.prototype.addOption = function ($attrs) {
             var self = this;
-            self.options[$attrs.value] = $attrs;
+            self.options[$attrs.ngSelectOption] = $attrs;
 
             $attrs.$$element.on('click', function (event) {
 
-                var val = $parse($attrs.value)(self.$scope);
+                var val = $parse($attrs.ngSelectOption)(self.$scope);
                 self.fold();
                 self.assign(val);
 
